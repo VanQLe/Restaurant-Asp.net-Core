@@ -1,0 +1,53 @@
+﻿@using OdeToFood.Controllers
+@model OdeToFood.ViewModels.HomePageViewModel
+
+@{
+    ViewBag.Title = "Home";
+
+}
+
+<h1>Welcome!</h1>
+
+@foreach (var restaurant in Model.Restaurants)
+{
+    @Html.Partial("_Summary", restaurant)
+
+}
+
+
+<div>
+   <h1><a class="btn btn-primary" asp-controller="Home" asp-action="Create">Create</a></h1>
+</div>
+
+
+
+<div>
+    <h1><a class="btn btn-primary" asp-controller="Home" asp-action="HelloWorld">Hello World</a></h1>
+</div>
+
+@*<table>
+    @foreach (var restaurant in Model.Restaurants)
+    {
+        <tr>
+            <td>@restaurant.Name</td>
+
+
+            <td>
+                <a asp-action="Details" asp-route-id="@restaurant.Id">Details</a>
+                <a asp-action="Edit" asp-route-id="@restaurant.Id">Edit</a>
+                @*<a href="/home/details/@item.Id">Details link </a>
+                @Html.ActionLink("View Details", nameof(HomeController.Details), new { id = item.Id })
+            </td>
+          
+
+        </tr>
+    }
+</table>*@
+
+
+
+@*@section footer{
+
+    <h3>Message of the day is @Model.CurrentMessage</h3>
+}*@
+
